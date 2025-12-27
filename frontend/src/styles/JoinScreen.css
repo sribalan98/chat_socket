@@ -1,0 +1,121 @@
+.join-screen {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--wa-green-dark) 0%, var(--wa-green) 100%);
+  animation: fadeIn 0.3s ease;
+}
+
+.join-container {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-lg);
+  max-width: 400px;
+  width: 90%;
+  animation: slideUp 0.4s ease;
+}
+
+.join-header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.wa-logo {
+  color: var(--wa-green);
+  margin-bottom: var(--spacing-md);
+  display: inline-block;
+  animation: fadeIn 0.6s ease;
+}
+
+.join-header h1 {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.join-header p {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.join-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.input-group label {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.input-group input {
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-md);
+  font-family: var(--font-family);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: border-color var(--transition-fast);
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--wa-green);
+}
+
+.input-group input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.join-button {
+  padding: 14px 24px;
+  background: var(--wa-green);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  font-family: var(--font-family);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  margin-top: var(--spacing-sm);
+}
+
+.join-button:hover:not(:disabled) {
+  background: var(--wa-green-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.join-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.join-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .join-container {
+    padding: var(--spacing-lg);
+  }
+  
+  .wa-logo svg {
+    width: 60px;
+    height: 60px;
+  }
+}

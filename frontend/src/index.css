@@ -1,0 +1,211 @@
+/* WhatsApp-Inspired Design System */
+
+:root {
+  /* WhatsApp Colors - Light Mode */
+  --wa-green: #25D366;
+  --wa-green-dark: #128C7E;
+  --wa-green-light: #DCF8C6;
+  --wa-blue: #34B7F1;
+  --wa-gray-bg: #F0F2F5;
+  --wa-gray-light: #E9EDEF;
+  --wa-gray-border: #D1D7DB;
+  --wa-white: #FFFFFF;
+  --wa-text-primary: #111B21;
+  --wa-text-secondary: #667781;
+  --wa-text-tertiary: #8696A0;
+  
+  /* Dark Mode Colors */
+  --wa-dark-bg: #111B21;
+  --wa-dark-surface: #202C33;
+  --wa-dark-surface-light: #2A3942;
+  --wa-dark-border: #3B4A54;
+  --wa-dark-text: #E9EDEF;
+  --wa-dark-text-secondary: #8696A0;
+  
+  /* Message Colors */
+  --msg-sent-bg: #D9FDD3;
+  --msg-received-bg: #FFFFFF;
+  --msg-sent-bg-dark: #005C4B;
+  --msg-received-bg-dark: #202C33;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 2px 5px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.2);
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-bubble: 7.5px;
+  
+  /* Typography */
+  --font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-size-xs: 11px;
+  --font-size-sm: 13px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 20px;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 350ms ease;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: var(--wa-dark-bg);
+    --bg-secondary: var(--wa-dark-surface);
+    --bg-tertiary: var(--wa-dark-surface-light);
+    --border-color: var(--wa-dark-border);
+    --text-primary: var(--wa-dark-text);
+    --text-secondary: var(--wa-dark-text-secondary);
+    --msg-sent: var(--msg-sent-bg-dark);
+    --msg-received: var(--msg-received-bg-dark);
+  }
+}
+
+/* Light Mode */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-primary: var(--wa-gray-bg);
+    --bg-secondary: var(--wa-white);
+    --bg-tertiary: var(--wa-gray-light);
+    --border-color: var(--wa-gray-border);
+    --text-primary: var(--wa-text-primary);
+    --text-secondary: var(--wa-text-secondary);
+    --msg-sent: var(--msg-sent-bg);
+    --msg-received: var(--msg-received-bg);
+  }
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--wa-gray-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--wa-text-tertiary);
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-thumb {
+    background: var(--wa-dark-border);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--wa-dark-text-secondary);
+  }
+}
+
+/* Utility Classes */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-sm {
+  gap: var(--spacing-sm);
+}
+
+.gap-md {
+  gap: var(--spacing-md);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes typing {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+}
+
+.fade-in {
+  animation: fadeIn var(--transition-normal);
+}
+
+.slide-up {
+  animation: slideUp var(--transition-normal);
+}
