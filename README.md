@@ -50,13 +50,31 @@ The frontend uses Vite and runs on `http://localhost:5173` by default.
   - `receive_message` — received on clients
   - `typing` — typing indicator
 
-## Files of interest
+---
 
-- `backend/src/server.ts`
-- `backend/src/socket/chat.handlers.ts`
-- `frontend/src/App.tsx`
+This project is a clean, minimal sample intended for viewing and learning. It demonstrates a tidy directory layout, sensible defaults for colors and fonts, and a small, focused code surface so you can quickly understand how Socket.IO works on both server and client sides.
 
-## Want me to…
+**Design / Visuals**
 
-- Start the dev servers here? (I can run them if you want.)
-- Add minimal CSS for the chat UI? (I can add `frontend/src/App.css` tweaks.)
+- Color & fonts: the frontend includes simple, readable defaults. Swap CSS variables or your font stack in `frontend/src/index.css` or `frontend/src/App.css` to match your brand.
+- Clean UI: the sample chat UI keeps elements minimal (join screen, message list, input row) for clarity.
+
+**Project workflow**
+
+| Step               | Purpose                                                     |
+| ------------------ | ----------------------------------------------------------- |
+| Plan               | Define chat features and simple UI layout                   |
+| Implement backend  | Create Socket.IO server handlers in `backend/src/socket`    |
+| Implement frontend | Build chat UI and client socket in `frontend/src/App.tsx`   |
+| Test locally       | Run backend + frontend and verify messaging between clients |
+| Iterate            | Tweak styling, add persistence or auth as needed            |
+
+**Socket implementation**
+
+- Server-side: sockets are implemented in `backend/src/socket/chat.handlers.ts` and wired in `backend/src/server.ts`.
+- Client-side: the socket client is in `frontend/src/App.tsx` and connects to `http://localhost:3001` by default.
+
+If you'd like, I can:
+
+- Add a small `frontend/src/App.css` theme with color variables and font stack.
+- Start both dev servers for a quick demo here.
