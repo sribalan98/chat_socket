@@ -73,8 +73,3 @@ This project is a clean, minimal sample intended for viewing and learning. It de
 
 - Server-side: sockets are implemented in `backend/src/socket/chat.handlers.ts` and wired in `backend/src/server.ts`.
 - Client-side: the socket client is in `frontend/src/App.tsx` and connects to `http://localhost:3001` by default.
-
-If you'd like, I can:
-
-- Add a small `frontend/src/App.css` theme with color variables and font stack.
-- Start both dev servers for a quick demo here.
